@@ -157,13 +157,13 @@ const imageDarkOptions: DropdownOption[] = [
 ];
 
 const widthOptions = [
+    { text: '300', value: '300' },
     { text: 'width', value: 'auto' },
     { text: '50', value: '50' },
     { text: '100', value: '100' },
     { text: '150', value: '150' },
     { text: '200', value: '200' },
     { text: '250', value: '250' },
-    { text: '300', value: '300' },
     { text: '350', value: '350' },
 ];
 
@@ -205,10 +205,10 @@ const App = (_: any, state: AppState, setState: SetState) => {
     const {
         fileType = 'png',
         fontSize = '100px',
-        theme = 'light',
+        theme = 'dark',
         md = true,
-        text = '**Hello World**',
-        images=[imageLightOptions[0].value],
+        text = '**Sample Text**',
+        images=[imageDarkOptions[0].value],
         widths=[],
         heights=[],
         showToast = false,
@@ -225,6 +225,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
     url.searchParams.append('md', mdValue);
     url.searchParams.append('fontSize', fontSize);
     for (let image of images) {
+        console.log(url);
         url.searchParams.append('images', image);
     }
     for (let width of widths) {

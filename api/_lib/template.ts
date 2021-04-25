@@ -13,11 +13,11 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('ba
 
 function getCss(theme: string, fontSize: string) {
     let background = 'white';
-    let foreground = 'black';
+    let foreground = '#2c2c2c';
     let radial = 'lightgray';
 
     if (theme === 'dark') {
-        background = 'black';
+        background = '#2c2c2c';
         foreground = 'white';
         radial = 'dimgray';
     }
@@ -131,7 +131,7 @@ export function getHtml(parsedReq: ParsedRequest) {
 </html>`;
 }
 
-function getImage(src: string, width ='auto', height = '225') {
+function getImage(src: string, width ='300', height = '225') {
     return `<img
         class="logo"
         alt="Generated Image"
